@@ -1,0 +1,60 @@
+﻿@page "/formrepresentanteventas"
+<h3>RepresentanteVentasFormPage</h3>
+
+<EditForm Model="@oRepresentanteFormCLS" OnValidSubmit="@Guardar">
+    <DataAnnotationsValidator />
+
+    <div class="mt-3">
+        <label>Número de Empleado</label>
+        <InputNumber class="form-control" @bind-Value="oRepresentanteFormCLS.Num_Empl" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.Num_Empl)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Nombre</label>
+        <InputText class="form-control" @bind-Value="oRepresentanteFormCLS.Nombre" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.Nombre)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Edad</label>
+        <InputNumber class="form-control" @bind-Value="oRepresentanteFormCLS.Edad" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.Edad)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Cargo</label>
+        <InputText class="form-control" @bind-Value="oRepresentanteFormCLS.Cargo" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.Cargo)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Fecha de Contrato</label>
+        <InputDate class="form-control" @bind-Value="oRepresentanteFormCLS.FechaContrato" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.FechaContrato)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Cuota</label>
+        <InputNumber class="form-control" @bind-Value="oRepresentanteFormCLS.Cuota" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.Cuota)" />
+    </div>
+
+    <div class="mt-3">
+        <label>Ventas</label>
+        <InputNumber class="form-control" @bind-Value="oRepresentanteFormCLS.Ventas" />
+        <ValidationMessage For="(() => oRepresentanteFormCLS.Ventas)" />
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </div>
+</EditForm>
+
+@code {
+    public RepresentanteVentasFormCLS oRepresentanteFormCLS { get; set; } = new RepresentanteVentasFormCLS();
+        private void Guardar()
+        {
+            Console.WriteLine("Guardado");
+        }
+}
