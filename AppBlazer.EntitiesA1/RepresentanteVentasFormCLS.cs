@@ -24,11 +24,11 @@ namespace AppBlazer.EntitiesA1
         public DateTime FechaContrato { get; set; }
 
         [Required(ErrorMessage = "La cuota es obligatoria.")]
-        [Range(0, double.MaxValue, ErrorMessage = "La cuota debe ser un valor numérico positivo.")]
+        [Range(1, double.MaxValue, ErrorMessage = "La cuota debe ser un valor numérico positivo.")]
         public decimal Cuota { get; set; }
 
         [Required(ErrorMessage = "Las ventas son obligatorias.")]
-        [Range(0, double.MaxValue, ErrorMessage = "Las ventas deben ser un valor numérico positivo.")]
+        [Range(1, double.MaxValue, ErrorMessage = "Las ventas deben ser un valor numérico positivo.")]
         public decimal Ventas { get; set; }
 
     }
