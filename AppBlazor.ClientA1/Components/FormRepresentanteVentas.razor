@@ -1,7 +1,5 @@
-﻿@page "/formrepresentanteventas"
-<h3>RepresentanteVentasFormPage</h3>
-
-<EditForm Model="@oRepresentanteFormCLS" OnValidSubmit="@Guardar">
+﻿@inject NavigationManager navigationManager
+<EditForm Model="@oRepresentanteFormCLS" OnValidSubmit="@guardar">
     <DataAnnotationsValidator />
 
     <div class="mt-3">
@@ -48,13 +46,19 @@
 
     <div class="mt-3">
         <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="submit" class="btn btn-danger" @onclick="@regresar">Regresar</button>
     </div>
 </EditForm>
-
 @code {
     public RepresentanteVentasFormCLS oRepresentanteFormCLS { get; set; } = new RepresentanteVentasFormCLS();
-        private void Guardar()
-        {
-            Console.WriteLine("Guardado");
-        }
+
+    private void guardar()
+    {
+        Console.WriteLine("Di click");
+    }
+
+    private void regresar()
+    {
+        navigationManager.NavigateTo("representanteventas");
+    }
 }

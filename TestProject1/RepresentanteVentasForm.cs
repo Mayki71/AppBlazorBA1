@@ -37,7 +37,6 @@ namespace AppBlazor.Test
         [Fact]
         public void ValidacionDebePasarConDatosCorrectos()
         {
-            // Arrange
             var representante = new RepresentanteVentas
             {
                 Num_Empl = 1001,
@@ -49,10 +48,8 @@ namespace AppBlazor.Test
                 Ventas = 6000
             };
 
-            // Act
             var errores = ValidarModelo(representante);
 
-            // Assert
             Assert.Empty(errores); // No debería haber errores con datos válidos
         }
     }
